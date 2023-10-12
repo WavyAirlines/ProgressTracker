@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
 html {
   font-size: 14px;
 }
@@ -25,4 +26,15 @@ body {
 }
     .btn-primary:hover {
         background-color: #49919E;
+    }
+td > a {
+    text-decoration: none;
+    font-family: "Gabarito";
+    color:black;
+}
+    td > a:hover {
+        color: #49919E;
+        height: 120%;
+        width: 120%;
+        transition: 0.2s;
     }

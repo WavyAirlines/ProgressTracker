@@ -2,20 +2,32 @@
    ViewData["Title"] = "Split Page";
 }
 <h1>What Type Of Split Do You Run?</h1>
-    <ul>
-        <li>
-            <a asp-controller="Split" asp-action="ByCategory" asp-route-name="PPL">
-            Push Pull Legs Split
-        </a>
-        </li>
-    <li>
-        <a asp-controller="Split" asp-action="ByCategory" asp-route-name="Arnold">
+<section class="row card-group">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-body text-center h-100">
+                <a asp-controller="Split" asp-action="ByCategory" asp-route-name="PPL" class="btn btn-primary">
+                    Push Pull Legs Split
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-body text-center h-100">
+                <a asp-controller="Split" asp-action="ByCategory" asp-route-name="Arnold" class="btn btn-primary">
         Arnold Split
         </a>
-    </li>
-    <li>
-        <a asp-controller="Split" asp-action="ByCategory" asp-route-name="Bro">
+            </div>
+        </div>
+    </div>
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center h-100">
+                <a asp-controller="Split" asp-action="ByCategory" asp-route-name="Bro" class="btn btn-primary">
         Bro Split
         </a>
-    </li>
-    </ul>
+            </div>
+        </div>
+    </div>
+    </section>

@@ -12,7 +12,7 @@ namespace ProgressTracker.Models
         [Required]
         public int Reps { get; set; }
         [Required]
-        public decimal RPE { get; set; }
+        public int CategoryId { get; set; }
 
         [Required]
         public int MovementId { get; set; }
