@@ -1,0 +1,21 @@
+﻿@{
+   ViewData["Title"] = "Split Page";
+}
+<h1>What Type Of Split Do You Run?</h1>
+    <ul>
+        <li>
+            <a asp-controller="Split" asp-action="ByCategory" asp-route-name="PPL">
+            Push Pull Legs Split
+        </a>
+        </li>
+    <li>
+        <a asp-controller="Split" asp-action="ByCategory" asp-route-name="Arnold">
+        Arnold Split
+        </a>
+    </li>
+    <li>
+        <a asp-controller="Split" asp-action="ByCategory" asp-route-name="Bro">
+        Bro Split
+        </a>
+    </li>
+    </ul>

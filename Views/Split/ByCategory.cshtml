@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Movement>
+@{
+}
+<h1>You Are Running @ViewData["Category"]</h1>
+
+<section class="row card-group">
+    @foreach (var movement in Model)
+    {
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body text-center h-100">
+                    <h5>@movement.Name</h5>
+                    <a class="btn btn-primary">
+                        Select Movement
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</section>
