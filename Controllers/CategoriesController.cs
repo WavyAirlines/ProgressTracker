@@ -48,7 +48,7 @@ namespace ProgressTracker.Controllers
         // GET: Categories/Create
         public IActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: Categories/Create
@@ -64,7 +64,7 @@ namespace ProgressTracker.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            return RedirectToAction("Error");
         }
 
         // GET: Categories/Edit/5

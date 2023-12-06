@@ -39,7 +39,8 @@ namespace ProgressTracker.Controllers
                 .FirstOrDefaultAsync(m => m.MovementId == id);
             if (movement == null)
             {
-                return NotFound();
+                //  return NotFound();
+                return View("Error");
             }
 
             return View(movement);

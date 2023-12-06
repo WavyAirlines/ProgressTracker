@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
 using ProgressTracker.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        .AddRoles<IdentityRole>() // enables roles and permissions
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
@@ -27,7 +29,17 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+//configure google auth login options 
+var configuration = builder.Configuration; //access config cars in appsettings.json
 
+builder.Services.AddAuthentication()
+    .AddGoogle(options =>
+    {
+
+        options.ClientId = configuration["Authentication:Google:ClientId"];
+
+        options.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+    });
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
